@@ -1,0 +1,138 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px;
+    background-color: #eee;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+/* Sections */
+section {
+    padding: 50px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Skills List */
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    display: inline-block;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Projects Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Contact Form */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

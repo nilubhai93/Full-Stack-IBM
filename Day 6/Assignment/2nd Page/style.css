@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    width: 80%;
+    margin: auto;
+}
+
+.left {
+    max-width: 50%;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #000;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.app-buttons {
+    margin-top: 20px;
+    display: flex;
+    position:relative;
+}
+
+.app-buttons img {
+    width: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 80px;
+}
+#google_play{
+    height:180px;
+    position:absolute;
+    right: -31px;
+    top: -50px;
+}
+
+.right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.payment-card {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 10%;
+    right: 11%;
+}
+
+.payment-card h2 {
+    font-size: 34px;
+    color: #00b894;
+    margin: 10px 0;
+    /* text-align: center;*/
+    /* display: flex; */
+    
+}
+
+.money_section{
+    background-color: rgb(216, 245, 216);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-bottom: 5px;
+    
+}
+
+.paid_success b{
+    font-size: 24px;
+    color: black;
+
+}
+.money{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top:50px ;
+}
+.success {
+    color: rgb(189, 242, 189);
+    /* font-size: 22px; */
+}
+.success img{
+    height: 50px;
+    width: 50px;
+    mix-blend-mode: multiply; 
+}
+
+.details{
+    margin-top: 40px;
+}
+
+.details p:nth-child(1) {
+    color: black; /* Set text color to black */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.payment-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.payment-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+
+.avatars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 110px;
+    max-width: 250px;
+}
+
+.avatars img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #e0e0e0;
+}
+.avter_column{
+    display: flex;
+    flex-direction: column;
+    gap:120px;
+    justify-content: space-between;
+}
+.avter_column2>:nth-child(1){
+    z-index: 111;
+}

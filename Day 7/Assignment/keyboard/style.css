@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, 50px);
+    gap: 5px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background: #444;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.key:hover::before {
+    transform: scale(1);
+}
+
+.key:hover {
+    background: #666;
+    color: white;
+    transform: scale(1.1);
+    transition: background 0.3s, transform 0.3s;
+}
+
+
+.Backspace {
+    grid-area: 2/14/3/17;
+    width: 100px;
+    background-color: gray;
+}
+
+.numlock {
+    grid-area: 2/17/3/18;
+    width: 50px;
+}
+
+.tab {
+    grid-area: 3/1/4/3;
+    width: 100px;
+    background-color: tan;
+}
+
+.seven {
+    grid-area: 3/17/4/18;
+}
+
+.slace {
+    grid-area: 3/15/4/17;
+    
+}
+
+.plus {
+    grid-area: 3/20/5/21;
+    height: 100px;
+    background-color: lightgreen;
+    color: black;
+}
+
+.capslock {
+    grid-area: 4/1/5/3;
+    width: 100px;
+    background-color: rgb(255, 145, 0);
+}
+
+.enter {
+    grid-area: 4/14/5/17;
+    width: 100px;
+    background-color: yellow;
+    color: black;
+}
+
+.shift {
+    grid-area: 5/1/6/4;
+    width: 150px;
+    background-color: green;
+}
+
+.shift2 {
+    grid-area: 5/14/6/17;
+    width: 100px;
+    background-color: green;
+}
+
+.enter2 {
+    grid-area: 5/20/7/21;
+    height: 100px;
+    background-color: yellow;
+    color: black;
+}
+
+.Space {
+    grid-area: 6/5/7/11;
+    width: 320px;
+    background-color: white;
+    color: black;
+}
+
+.zero {
+    grid-area: 6/17/7/19;
+    width: 100px;
+}
+
+.delete{
+    background: red;
+}

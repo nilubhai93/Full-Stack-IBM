@@ -47,17 +47,19 @@ nav ul li a {
     color: #333;
 }
 
-select{
+select {
     border: none;
 }
-.auth{
+
+.auth {
     white-space: nowrap;
     margin-left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
+
 .auth a {
     /* white-space: nowrap; */
     text-decoration: none;
@@ -77,33 +79,28 @@ select{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap:5px;
+    gap: 5px;
     /* border: 5px solid red; */
     border-radius: 30px !important;
     height: 30px;
 }
-.signin img{
+
+.signin img {
     border-radius: 50%;
     height: 30px;
     padding: -10px;
 }
-/* ****************************************************************************************************************************** */
 
-.heroSection {
+/* ****************************************************************************** */
+main {
+    padding: 65px 0 0 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 100px 0 40px 0 ;
-    width: 100%;
-    
+    overflow: hidden;
 }
 
-.heroSection img {
-    border-radius: 10px;
-}
-
-/* ****************************************************************************************************************************** */
+/* ******************************************************************************** */
 
 
 .container {
@@ -112,27 +109,36 @@ select{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #e8f8fd;
 }
 
-.nav-tabs {
+.nav-tabs{
     width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* gap: 200px; */
     padding: 10px 0;
+    display: flex;
 }
 
-.nav-tabs a {
+.nav-tabs div {
+    display: flex;
+}
+
+.nav-tabs div a {
     text-decoration: none;
     color: black;
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 5px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .nav-tabs .active {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid rgb(0, 0, 255);
 }
 
 .booking-box {
@@ -160,7 +166,9 @@ select{
     border-bottom: 1px solid #ddd;
 }
 
-.location, .date, .passengers {
+.location,
+.date,
+.passengers {
     text-align: center;
     flex: 1;
 }
@@ -233,101 +241,319 @@ select{
 
 
 /* ****************************************************************************************************************************** */
-.imgSection{
+.imgSection {
     background-color: rgb(207, 248, 207);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 25px;
-    gap:10px
+    gap: 10px
 }
 
-.imgSection>:nth-child(1){
+.imgSection>:nth-child(1) {
     border-radius: 50%;
 }
 
-.imgSection > :nth-child(2),
-.imgSection > :nth-child(3) {
+.imgSection> :nth-child(2),
+.imgSection> :nth-child(3) {
     border-radius: 20px;
 }
 
 
-.imgSection>:nth-child(4){
+.imgSection>:nth-child(4) {
     /* margin: 20px; */
     border-radius: 10px;
 }
+
 /* ****************************************************************************************************************************** */
 
 
 
-.payments{
+.payments {
     /* background-color: rgb(246, 168, 0); */
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 25px;
-    gap:10px;
-    width:100%;
+    gap: 10px;
+    width: 100%;
 }
 
 
-.pay{
+.pay {
     /* height: 200px; */
     background-color: rgb(242, 234, 234);
     padding: 10px;
-    width: 30%;
     border-radius: 10px;
 }
 
-.recharges_option{
+.recharges_option {
     justify-content: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap:40px;
-    
+    gap: 40px;
+
 }
 
 
-li{
+li {
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+
 }
-.recharges_option li p{
+
+.recharges_option li p {
     font-size: 10px;
 }
 
-.recharge_now{
+.recharge_now {
     /* height: 35px; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    gap:10px;
+    gap: 10px;
     background-color: rgb(101, 101, 243);
     color: white;
     padding: 0 5px;
     border-radius: 10px;
-    
+
 }
 
-.recharge_now>:nth-child(1){
+.recharge_now>:nth-child(1) {
     background-color: white;
     border-radius: 50%;
     padding: 5px;
 }
-.recharge_now>:nth-child(3){
+
+.recharge_now>:nth-child(3) {
     background-color: white;
     padding: 7px;
     background-color: transparent;
     /* margin: 5px; */
-    border-radius:15px;
+    border-radius: 15px;
     white-space: nowrap;
     color: white;
     border: 2px solid white;
+}
+
+/* ******************************************************* */
+
+
+.paytmMoney , .twentyFore{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    /* background-color: red; */
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    /* overflow: hidden; */
+}
+#paytmMoney{
+    width: 50%;
+}
+.subPaytmMoney{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 10px;
+}
+
+
+
+#paytmMoney button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(4, 0, 255);
+    color: white;
+    padding: 0 10px;
+    border: none;
+    border-radius: 30px;
+}
+
+/* /***************************************************** */
+.sub24{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: #002970;
+    color: white;
+    width: 80%;
+    border-radius: 10px;
+    align-items: center;
+    
+}
+.sub24>:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    
+}
+
+.LearnMore {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #002970;
+    color: white;
+    margin: 5px;
+    padding: 0 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 151px;
+    white-space: nowrap;
+    text-decoration: none;
+    
+}
+
+
+/* ************************************************** */
+
+.creditAndInsurance {
+    display: flex;
+    gap: 20px;
+    max-width: 80%;
+}
+.card {
+    background: rgb(218, 246, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    width: 50% ;
+}
+.logoApply{
+    display: flex;
+}
+.applyNow{
+    display: flex;
+    background-color: transparent;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.button{
+    white-space: nowrap;
+    color: rgb(21, 0, 255);
+    text-decoration: none;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+.logos img {
+    height: 30px;
+    margin: 5px;
+}
+.image-placeholder {
+    margin-top: 15px;
+    height: 150px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: white;
+    padding: 20px;
+    border-top: 2px solid #ddd;
+
+}
+
+.footerDetails{
+    padding: 0 100px;
+}
+
+.footer-section {
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 10px;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.social-icons img {
+    width: 20px;
+    margin-left: 10px;
 }

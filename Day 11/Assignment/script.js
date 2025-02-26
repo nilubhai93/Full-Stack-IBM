@@ -36,6 +36,12 @@ student.checkPassOrFail();})()
 
 
 
+
+
+
+
+
+
 // Problem 3: Generate Multiplication Table (For Loop) Task:
 // Write a function generateTable(num, limit) that prints the multiplication table of a given num up to limit.
 
@@ -45,6 +51,15 @@ function generateTable(num, limit) {
     }
 }
 generateTable(5,3);
+
+
+
+
+
+
+
+
+
 
 
 
@@ -67,3 +82,17 @@ function fizzbuzz(num) {
     }
 }
 fizzbuzz(30)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

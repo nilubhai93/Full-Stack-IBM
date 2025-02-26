@@ -38,6 +38,62 @@
 
 
 
+
+
+
+
+
+
+// Problem 2: Library System (Nested Objects & Methods)
+
+const library = {
+    books: {
+      "Atomic Habits": { author: "James Clear", availableCopies: 3 },
+      "The Alchemist": { author: "Paulo Coelho", availableCopies: 5 },
+      "1984": { author: "George Orwell", availableCopies: 4 },
+      "To Kill a Mockingbird": { author: "Harper Lee", availableCopies: 2 }
+    },
+    borrowBook: function(bookName) {
+      if (this.books[bookName] && this.books[bookName].availableCopies > 0) {
+        this.books[bookName].availableCopies -= 1;
+        console.log(`You have borrowed "${bookName}".`);
+      } else {
+        console.log(`"${bookName}" is not available or out of stock.`);
+      }
+    },
+    returnBook: function(bookName) {
+      if (this.books[bookName]) {
+        this.books[bookName].availableCopies += 1;
+        console.log(`You have returned "${bookName}".`);
+      } else {
+        console.log(`"${bookName}" is not recognized in the library.`);
+      }
+    }
+  };
+  
+  // Example usage
+  library.borrowBook("Atomic Habits");
+  console.log(library.books["Atomic Habits"].availableCopies); // Output: 2
+  
+  library.returnBook("Atomic Habits");
+  console.log(library.books["Atomic Habits"].availableCopies); // Output: 3
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Problem 3: Generate Multiplication Table (For Loop) Task:
 // Write a function generateTable(num, limit) that prints the multiplication table of a given num up to limit.
 

@@ -1,5 +1,5 @@
 body{
-    background-image: url("https://plus.unsplash.com/premium_photo-1701791988754-d200cc1b78c7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("https://m.media-amazon.com/images/I/71+17bVYHxL._AC_UF1000,1000_QL80_.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
@@ -47,11 +47,13 @@ input:focus{
 
 table{
     width: 50%;
-    color: rgb(236, 176, 176);
+    color: rgb(0, 0, 0);
 }
 table,td{
-    border:1px solid green;
+    border:1px solid rgb(255, 25, 0);
     border-collapse: collapse;
     margin: auto;
     margin-top: 80px;
 }
+
+

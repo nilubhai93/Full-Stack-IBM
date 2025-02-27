@@ -1,0 +1,82 @@
+.fillForm{
+    /* width: 35%; */
+    
+    width: 400px;
+    border: 1px solid black;
+    margin:auto;
+    text-align: center;
+    padding: 20px;
+
+}
+
+input{
+    width:90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+
+input:focus{
+    background-color: antiquewhite;
+}
+
+.fillForm button{
+    padding: 10px;
+    width: 35%;
+    border: none;
+    background-color: rgb(6, 191, 6);
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.fillForm button:hover{
+    cursor: pointer;
+    background-color: greenyellow;
+}
+
+table{
+    width: 50%;
+    color: rgb(235, 28, 28);
+    margin: auto;
+    margin-top: 20px;
+    
+}
+
+table,td{
+    border: 1px solid green;
+    /* margin: auto; */
+    border-collapse: collapse;
+    text-align: center;
+}
+th{
+    border: 1px solid green;
+
+}
+td{
+    padding: 4px 10px;
+}
+
+@media (max-width: 768px) {
+    table{
+        width: 100vw;   
+    }
+}
+@media (max-width: 1024px) {
+    table{
+        width: 90%;   
+    }
+}
+
+@media (max-width: 1204px) {
+    table{
+        width: 80%;   
+    }
+}
+
+@media (max-width: 1304px) {
+    table{
+        width: 70%;   
+    }
+}
+

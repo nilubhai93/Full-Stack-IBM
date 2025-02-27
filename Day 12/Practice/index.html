@@ -1,12 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Example</title>
-</head>
-<body>
-  <h1 id="header">Hello, World!</h1>
-  <button id="changeTextButton">Change Text</button>
+<html lang="en">
 
-  <script src="script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="fillForm">
+        <h1>Fill up this form</h1>
+        <form id="userform">
+            <input type="text" placeholder=" full name " id="name" required>
+            <input type="Email" placeholder="Enter mail" id="email" required>
+            <input type="text" placeholder="Enter Number" id="phoneNumber" required>
+            <input type="password" placeholder=" Enter password" id="password" required>
+            <input type="confirmPassword" placeholder=" Enter confirm password" id="confirmPassword" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <table id="userInfo">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>password</th>
+                <th>confirmPassword</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>

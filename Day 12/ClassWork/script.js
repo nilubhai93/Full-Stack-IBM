@@ -23,17 +23,20 @@ form.addEventListener("submit", (e) => {
     td1.innerText=obj.name;
 
     let td2= document.createElement("td");
-    td1.innerText=obj.email;
+    td2.innerText=obj.email;
 
     let td3= document.createElement("td");
-    td1.innerText=obj.phoneNumber;
+    td3.innerText=obj.phoneNumber;
 
     let td4= document.createElement("td");
-    td1.innerText=obj.password;
+    td4.innerText=obj.password;
 
     let td5= document.createElement("td");
-    td1.innerText=obj.confirmPassword;
+    td5.innerText=obj.confirmPassword;
 
     tr.append(td1,td2,td3,td4,td5)
     document.getElementById("tbody").append(tr);
 });
+
+
+

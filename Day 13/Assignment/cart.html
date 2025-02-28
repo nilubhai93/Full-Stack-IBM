@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="cartItems"></tbody>
+    </table>
+    <p id="emptyCartMessage">Your cart is empty! Add some products!</p>
+    <button onclick="location.href='index.html'">Back to Products</button>
+    <button id="purchaseBtn">Purchase</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

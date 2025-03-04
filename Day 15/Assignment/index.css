@@ -5,7 +5,7 @@
 }
 
 #navbar {
-    background: linear-gradient(120deg, #010101, rgb(230, 0, 0));
+    background-color:#2bd60d;
     display: flex;
     justify-content: space-between;
     position: fixed;

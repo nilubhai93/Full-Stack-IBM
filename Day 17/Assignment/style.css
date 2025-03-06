@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+header {
+    margin-right: 20px;
+    padding: 10px 40px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0eded;
+    position: fixed;
+    width: 100%;
+}
+
+
+
+
+.logoMenu,
+.searchSection,
+.profileSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchSection>input {
+    width: 400px;
+    padding: 8px;
+    border-radius: 100px;
+}
+
+.profileSection {
+    gap: 30px !important;
+    padding-right: 30px;
+}
+
+.profileSection>:nth-child(1) {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    background-color: #ece8e8;
+    white-space: nowrap;
+}
+
+.profileSection> :nth-child(3) {
+    border: 1px solid black;
+    border-radius: 100%;
+    /* This makes the element round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9198e6;
+    padding: 3px 7px;
+    /* Optional: Uncomment if you want some padding */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    padding: 10px;
+    margin-top: 5px;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    border-right: 2px solid black;
+    overflow: auto;
+
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar ul li i {
+    margin-right: 10px;
+}
+
+.sidebar ul li img{
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+.video-grid {
+    margin-left: 220px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding-top: 70px;
+}
+.video-grid>.video>.videoLogoSection{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.video-grid>.video>.videoLogoSection>img{
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    margin-top: 10px;
+    padding-right: 5px;
+}
+
+.video {
+    background: #d9d0d0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.video img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.video h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}

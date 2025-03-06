@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logoMenu">
+            <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 24.75 24.75"
+                xml:space="preserve">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <path
+                            d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z M22.75,10.375H2 c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z M22.75,18.875H2 c-1.104,0-2,0.896-2,2s0.896,2,2,2h20.75c1.104,0,2-0.896,2-2S23.855,18.875,22.75,18.875z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg height="25px" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 461.001 461.001" xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <path style="fill:#F61C0D;"
+                            d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <p>YouTube</p>
+        </div>
+
+
+        <div class="searchSection">
+            <input type="search">
+            <svg fill="#000000" height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 488.4 488.4" xml:space="preserve">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <g>
+                            <path
+                                d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6 s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2 S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7 S381.9,104.65,381.9,203.25z">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <svg fill="#000000" height="20px" width="20px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <g>
+                            <path
+                                d="m439.5,236c0-11.3-9.1-20.4-20.4-20.4s-20.4,9.1-20.4,20.4c0,70-64,126.9-142.7,126.9-78.7,0-142.7-56.9-142.7-126.9 0-11.3-9.1-20.4-20.4-20.4s-20.4,9.1-20.4,20.4c0,86.2 71.5,157.4 163.1,166.7v57.5h-23.6c-11.3,0-20.4,9.1-20.4,20.4 0,11.3 9.1,20.4 20.4,20.4h88c11.3,0 20.4-9.1 20.4-20.4 0-11.3-9.1-20.4-20.4-20.4h-23.6v-57.5c91.6-9.3 163.1-80.5 163.1-166.7z">
+                            </path>
+                            <path
+                                d="m256,323.5c51,0 92.3-41.3 92.3-92.3v-127.9c0-51-41.3-92.3-92.3-92.3s-92.3,41.3-92.3,92.3v127.9c0,51 41.3,92.3 92.3,92.3zm-52.3-220.2c0-28.8 23.5-52.3 52.3-52.3s52.3,23.5 52.3,52.3v127.9c0,28.8-23.5,52.3-52.3,52.3s-52.3-23.5-52.3-52.3v-127.9z">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+
+        <div class="profileSection">
+            <p>+ Create</p>
+            <svg fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 611.999 611.999" xml:space="preserve">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <g>
+                            <g>
+                                <path
+                                    d="M570.107,500.254c-65.037-29.371-67.511-155.441-67.559-158.622v-84.578c0-81.402-49.742-151.399-120.427-181.203 C381.969,34,347.883,0,306.001,0c-41.883,0-75.968,34.002-76.121,75.849c-70.682,29.804-120.425,99.801-120.425,181.203v84.578 c-0.046,3.181-2.522,129.251-67.561,158.622c-7.409,3.347-11.481,11.412-9.768,19.36c1.711,7.949,8.74,13.626,16.871,13.626 h164.88c3.38,18.594,12.172,35.892,25.619,49.903c17.86,18.608,41.479,28.856,66.502,28.856 c25.025,0,48.644-10.248,66.502-28.856c13.449-14.012,22.241-31.311,25.619-49.903h164.88c8.131,0,15.159-5.676,16.872-13.626 C581.586,511.664,577.516,503.6,570.107,500.254z M484.434,439.859c6.837,20.728,16.518,41.544,30.246,58.866H97.32 c13.726-17.32,23.407-38.135,30.244-58.866H484.434z M306.001,34.515c18.945,0,34.963,12.73,39.975,30.082 c-12.912-2.678-26.282-4.09-39.975-4.09s-27.063,1.411-39.975,4.09C271.039,47.246,287.057,34.515,306.001,34.515z M143.97,341.736v-84.685c0-89.343,72.686-162.029,162.031-162.029s162.031,72.686,162.031,162.029v84.826 c0.023,2.596,0.427,29.879,7.303,63.465H136.663C143.543,371.724,143.949,344.393,143.97,341.736z M306.001,577.485 c-26.341,0-49.33-18.992-56.709-44.246h113.416C355.329,558.493,332.344,577.485,306.001,577.485z">
+                                </path>
+                                <path
+                                    d="M306.001,119.235c-74.25,0-134.657,60.405-134.657,134.654c0,9.531,7.727,17.258,17.258,17.258 c9.531,0,17.258-7.727,17.258-17.258c0-55.217,44.923-100.139,100.142-100.139c9.531,0,17.258-7.727,17.258-17.258 C323.259,126.96,315.532,119.235,306.001,119.235z">
+                                </path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <div>
+                <p>N</p>
+            </div>
+
+        </div>
+    </header>
+
+
+
+
+
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li><i class="fas fa-home"></i> Home</li>
+                <li> <img src="https://static.cdnlogo.com/logos/y/48/youtube-shorts.svg" alt=""> Shorts</li>
+                <li><img src="https://svgmix.com/uploads/material/3321f8-youtube-subscription.svg"> Subscriptions</li>
+            </ul>
+
+
+            <hr>
+            <div>
+                <p>You ></p>
+                <ul>
+                    <li><img src="https://w7.pngwing.com/pngs/630/291/png-transparent-computer-icons-arrow-history-angle-text-logo-thumbnail.png"
+                            alt=""> History</li>
+                    <li><img src="https://static.vecteezy.com/system/resources/previews/026/221/294/non_2x/playlist-icon-symbol-design-illustration-vector.jpg"
+                            alt=""> Playlists</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/1946/1946515.png"> Your videos</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/10742/10742584.png"> Your courses</li>
+                    <li><img
+                            src="https://cdn.iconscout.com/icon/free/png-512/free-watch-later-icon-download-in-svg-png-gif-file-formats--material-design-icons-google-action-vol-4-pack-user-interface-1513853.png?f=webp&w=512">
+                        Watch Later</li>
+
+                </ul>
+            </div>
+            <hr>
+
+
+
+            <!-- Subscriptions -->
+            <div>
+                <p><b>Subscriptions</b></p>
+                <ul>
+                    <li><img src="https://yt3.ggpht.com/ytc/AIdro_kX3sdbuu3KFmRPsmlu0R5Rx_BhpxwupjtvJmkEdNfla7w=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> CodeWithHarry</li>
+                    <li><img src="https://yt3.ggpht.com/FEcjRtez5od8UowDo6tTt9WlE-MrIFEmcwPMTORmK9Swk6KCklOmA3xfIG9WuLWfNYfNThQE=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Apna College</li>
+                    <li><img src="https://yt3.ggpht.com/ytc/AIdro_mZfqpNqtGLksLQfMbW7UVFgub_poGNE-YU_RAoV_NdUII=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Gate Smashers</li>
+                    <li><img src="https://yt3.ggpht.com/jZxMN-zI0AolSc4aGHSjkU74KK_4Im2d5RDGHXqw2DbvkMnZ8dLClL0C7nSB7u-EbjJroSFvVek=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Dr.Gajendra Puro</li>
+                    <li><img src="https://yt3.ggpht.com/XnrrHy6dKTuqZXKjwzodba-JuBffuXZN31C5LL9sTLG00I5M9qVX_vjRQCB7_hfZGyW9L2KCux0=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Code With Summit</li>
+                    <li><img src="https://yt3.ggpht.com/ytc/AIdro_kX3sdbuu3KFmRPsmlu0R5Rx_BhpxwupjtvJmkEdNfla7w=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> CodeWithHarry</li>
+                    <li><img src="https://yt3.ggpht.com/FEcjRtez5od8UowDo6tTt9WlE-MrIFEmcwPMTORmK9Swk6KCklOmA3xfIG9WuLWfNYfNThQE=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Apna College</li>
+                    <li><img src="https://yt3.ggpht.com/ytc/AIdro_mZfqpNqtGLksLQfMbW7UVFgub_poGNE-YU_RAoV_NdUII=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Gate Smashers</li>
+                    <li><img src="https://yt3.ggpht.com/jZxMN-zI0AolSc4aGHSjkU74KK_4Im2d5RDGHXqw2DbvkMnZ8dLClL0C7nSB7u-EbjJroSFvVek=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Dr.Gajendra Puro</li>
+                    <li><img src="https://yt3.ggpht.com/XnrrHy6dKTuqZXKjwzodba-JuBffuXZN31C5LL9sTLG00I5M9qVX_vjRQCB7_hfZGyW9L2KCux0=s88-c-k-c0x00ffffff-no-rj"
+                            alt=""> Code With Summit</li>
+                    <li><img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" alt=""> Show more</li>
+                </ul>
+            </div>
+            <hr>
+
+            <!-- Explore -->
+            <div>
+                <p><b>Explore</b></p>
+                <ul>
+                    <li><img src="https://cdn-icons-png.flaticon.com/512/1946/1946485.png" alt=""> Trending</li>
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6HsH7Irh4Fm-R0V596S0bgV9zlSh91aHlpA&s"
+                            alt=""> Shopping</li>
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlR60KsmAwNvkbLqrauPu9VRpCnPATEXCtyvEsXe7GOCSB-B8Mex0m9M8Gpnhfj1Bkarg&usqp=CAU"
+                            alt=""> Music</li>
+                    <li><img src="https://png.pngtree.com/png-clipart/20190921/original/pngtree-movie-board-icon-png-image_4751062.jpg"
+                            alt=""> Films</li>
+                    <li><img src="https://img.icons8.com/?size=100&id=tjuIMOXXe1mT&format=png" alt=""> Live</li>
+                    <li><img src="https://cdn.iconscout.com/icon/free/png-512/free-youtube-gaming-logo-icon-download-in-svg-png-gif-file-formats--streaming-social-media-pack-logos-icons-3853350.png?f=webp&w=512"
+                            alt=""> Gaming</li>
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTCExMKObwnw7K7615zcupl3fE3cI4X1ByAA&s"
+                            alt=""> News</li>
+                    <li><img src="https://www.svgrepo.com/show/2248/sports-trophy-cup.svg" alt=""> Sport</li>
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5oqo_GNS47RR55Xoidr0Ky7DOnRpM66xeZA&s"
+                            alt=""> Courses</li>
+                    <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRVLGOJCvt1XRczZQLTjBWjUs1TRCoLDQ5Hg&s"
+                            alt=""> Fashion & beauty</li>
+                    <li><img src="https://www.svgrepo.com/show/10596/podcast-symbol.svg" alt=""> Prodcasts</li>
+                </ul>
+            </div>
+            <hr>
+
+            <!-- More from YouTube -->
+            <div>
+                <p><b>More from YouTube</b></p>
+                <ul>
+                    <li><img src="https://www.svgrepo.com/show/13671/youtube.svg" alt=""> YouTube Premium</li>
+                    <li><img src="https://ih1.redbubble.net/image.5215699135.4123/raf,360x360,075,t,fafafa:ca443f4786.jpg"
+                            alt=""> YouTube Studio</li>
+                    <li><img src="https://www.svgrepo.com/show/343535/youtube-music-song-multimedia-audio.svg" alt="">
+                        YouTube Music</li>
+                    <li><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/YouTube_Kids_LogoVector.svg/1267px-YouTube_Kids_LogoVector.svg.png"
+                            alt=""> YouTube Kids</li>
+                </ul>
+            </div>
+            <hr>
+
+            <ul>
+                <li><img src="https://www.svgrepo.com/show/13688/settings.svg" alt="">Setting</li>
+                <li><img src="https://www.svgrepo.com/show/144951/flag.svg" alt="">Report History</li>
+                <li><img src="https://www.svgrepo.com/show/326673/help-circle-outline.svg" alt="">Help</li>
+                <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNmlzMGMfH6Nt0O4fN3drWO_i7BBz2_mB3WA&s"
+                        alt="">Send feedback</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>About Press Copyright Contact us Creator Advertise Developers</li>
+                <li>Terms Privacy Policy & Safety How YouTube works Test new features</li>
+                <li>© 2025 Google LLC</li>
+            </ul>
+
+        </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <main class="video-grid">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/h86FQ7vrnds?si=tN6usKynz7X20KQh" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <div class="videoLogoSection">
+                    <img src="https://yt3.ggpht.com/14Nf520-HXNdCmvBnCJMZm2NxCgmD-skHJvutlO3Zd6FjyNf8rXHzz9RHf7A44pLDY7z63s8=s88-c-k-c0x00ffffff-no-rj" alt="">
+                    <div>
+                        <h3>Master the Basics | DSA with JavaScript </h3>
+                        <p>Sheryians Coding School</p>
+                        <p>Great Ideas - 1.4M views - 1 year ago</p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </main>
+    </div>
+</body>
+
+</html>
+</body>
+
+</html>

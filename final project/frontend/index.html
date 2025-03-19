@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Sound Mixer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ambient Sound Mixer</h1>
+            <p>Mix relaxing sounds to create your perfect ambient atmosphere for focus, study, or relaxation</p>
+        </header>
+        
+        <div class="controls">
+            <button id="play-all">
+                <span class="btn-icon">▶</span> Play All
+            </button>
+            <button id="pause-all">
+                <span class="btn-icon">⏸</span> Pause All
+            </button>
+            <button id="save-combo">
+                <span class="btn-icon">💾</span> Save Combination
+            </button>
+            <button id="reset-all">
+                <span class="btn-icon">🔄</span> Reset All
+            </button>
+        </div>
+        
+        <div class="sound-library" id="sound-library">
+            <!-- Sounds will be dynamically added here -->
+        </div>
+        
+        <div class="user-combinations">
+            <h2>Your Saved Combinations</h2>
+            <div class="combination-list" id="combination-list">
+                <!-- Saved combinations will appear here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Save Combination Modal -->
+    <div class="modal" id="save-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">✕</span>
+            <h2>Save Your Sound Combination</h2>
+            <input type="text" id="combination-name" placeholder="Enter a name for this combination">
+            <button id="confirm-save">
+                <span class="btn-icon">💾</span> Save
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

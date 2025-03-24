@@ -19,7 +19,6 @@ app.get("/", function(req, res){ //here have two anonymous function one is reque
     res.status(200).send("<h1>Welcome to SVU backend server</h1>");
 });
 
-
 // app.get("/protected", auth, (req,res)=>{
 //     res.json({message:"This is protected route"});
 // }); //middleware

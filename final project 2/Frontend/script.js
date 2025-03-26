@@ -1,3 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+    });
+});
+
 const playlists = {
     sleep: [
         { url: 'https://www.bensound.com/bensound-music/bensound-relaxing.mp3', name: 'Relaxing Melody' },
@@ -31,80 +41,232 @@ const playlists = {
     ]
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const playlistButton = document.querySelector('.playlist-button');
-    const playlistOptions = document.querySelector('.playlist-options');
-    const audioPlayer = document.getElementById('audioPlayer');
-    const currentTrackDisplay = document.querySelector('.current-track');
-    const options = document.querySelectorAll('.option');
+// Sound effect file paths
+const soundFiles = {
+    Rain: 'https://assets.mixkit.co/sfx/preview/mixkit-rain-and-thunder-storm-2390.mp3',
+    Thunder: 'https://assets.mixkit.co/sfx/preview/mixkit-thunder-strike-1323.mp3',
+    Wind: 'https://assets.mixkit.co/sfx/preview/mixkit-wind-woods-ambience-2541.mp3',
+    Nature: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-ambience-2600.mp3',
+    Bird: 'https://assets.mixkit.co/sfx/preview/mixkit-bird-chirp-2469.mp3',
+    Fire: 'https://assets.mixkit.co/sfx/preview/mixkit-fire-burning-2038.mp3',
+    Waves: 'https://assets.mixkit.co/sfx/preview/mixkit-calm-sea-waves-1340.mp3',
+    Train: 'https://assets.mixkit.co/sfx/preview/mixkit-train-approaching-1714.mp3'
+};
 
-    // Toggle playlist options
-    playlistButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-        playlistOptions.classList.toggle('show');
-    });
+class SoundMixer {
+    constructor() {
+        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        this.musicPlayer = document.getElementById('audioPlayer');
+        this.currentTrackDisplay = document.querySelector('.current-track');
+        
+        // Sounds for ambient effects
+        this.sounds = {};
+        this.soundSources = {};
+        this.soundGains = {};
+        
+        // Music playlist management
+        this.currentPlaylist = null;
+        this.currentPlaylistType = null;
+        this.currentMusicIndex = -1;
 
-    // Play music when an option is clicked
-    options.forEach(option => {
-        option.addEventListener('click', (event) => {
-            const playlistType = option.getAttribute('data-playlist');
-            const currentPlaylist = playlists[playlistType];
+        this.initializeSounds();
+        this.attachEventListeners();
+        this.setupMusicPlayerListeners();
+    }
 
-            // Randomly select a song from the playlist
-            const randomSong = currentPlaylist[Math.floor(Math.random() * currentPlaylist.length)];
+    async initializeSounds() {
+        // Load ambient sound effects
+        for (const [soundName, soundPath] of Object.entries(soundFiles)) {
+            try {
+                const response = await fetch(soundPath);
+                const arrayBuffer = await response.arrayBuffer();
+                const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
+                
+                this.sounds[soundName] = audioBuffer;
+                // Prepare gain node for future use
+                this.soundGains[soundName] = this.audioContext.createGain();
+                this.soundGains[soundName].gain.setValueAtTime(0.5, this.audioContext.currentTime);
+            } catch (error) {
+                console.error(`Error loading ${soundName} sound:`, error);
+            }
+        }
+    }
 
-            // Remove focused class from all options
-            options.forEach(opt => opt.classList.remove('focused'));
-            
-            // Add focused class to clicked option
-            option.classList.add('focused');
-
-            // Play the selected song
-            audioPlayer.src = randomSong.url;
-            audioPlayer.play().catch(error => {
-                console.error('Error playing audio:', error);
-                currentTrackDisplay.textContent = 'Error playing track';
-            });
-
-            // Update current track display
-            currentTrackDisplay.textContent = `Now Playing: ${randomSong.name}`;
-
-            // Do NOT hide playlist options
+    setupMusicPlayerListeners() {
+        // Handle music playback ended
+        this.musicPlayer.addEventListener('ended', () => {
+            this.playNextTrack();
         });
-    });
+    }
 
+    playNextTrack() {
+        if (!this.currentPlaylist) return;
 
-    // Prevent playlist options from hiding when clicking inside them
-    playlistOptions.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
+        // Increment index, loop back to start if at end
+        this.currentMusicIndex = (this.currentMusicIndex + 1) % this.currentPlaylist.length;
+        const nextTrack = this.currentPlaylist[this.currentMusicIndex];
 
-    console.log('Music from Bensound.com - Royalty Free Music');
-});
+        this.musicPlayer.src = nextTrack.url;
+        this.musicPlayer.play();
+        this.updateCurrentTrackDisplay(nextTrack);
+    }
 
-// Add this CSS to your existing styles
-const additionalStyles = `
-<style>
-.playlist-options {
-    // display: none;
+    updateCurrentTrackDisplay(track) {
+        if (this.currentTrackDisplay) {
+            this.currentTrackDisplay.textContent = `Now Playing: ${track.name}`;
+        }
+    }
+
+    playSound(soundName) {
+        // Stop any existing source for this sound
+        if (this.soundSources[soundName]) {
+            this.soundSources[soundName].stop();
+            this.soundSources[soundName].disconnect();
+        }
+
+        // Create a new source for each play
+        const source = this.audioContext.createBufferSource();
+        source.buffer = this.sounds[soundName];
+        source.loop = true;
+
+        // Connect to gain node and audio destination
+        source.connect(this.soundGains[soundName]);
+        this.soundGains[soundName].connect(this.audioContext.destination);
+
+        // Start the source
+        source.start();
+
+        // Store the source for potential future stopping
+        this.soundSources[soundName] = source;
+    }
+
+    stopSound(soundName) {
+        if (this.soundSources[soundName]) {
+            this.soundSources[soundName].stop();
+            this.soundSources[soundName].disconnect();
+            delete this.soundSources[soundName];
+        }
+    }
+
+    toggleSlider(soundName) {
+        const icon = document.querySelector(`.icon[onclick="toggleSlider(${soundName})"]`);
+        icon.classList.toggle('show-slider');
+    }
+
+    updateVolume(soundName, volume) {
+        const volumeDecimal = volume / 100;
+        
+        if (this.soundGains[soundName]) {
+            this.soundGains[soundName].gain.setValueAtTime(volumeDecimal, this.audioContext.currentTime);
+        }
+
+        // Play or stop based on volume
+        if (volumeDecimal > 0) {
+            // Check if sound is not already playing
+            if (!this.soundSources[soundName]) {
+                this.playSound(soundName);
+            }
+        } else {
+            this.stopSound(soundName);
+        }
+    }
+
+    // Enhanced playlist functionality
+    selectPlaylist(playlistType) {
+        this.currentPlaylist = playlists[playlistType];
+        this.currentPlaylistType = playlistType;
+        this.currentMusicIndex = -1;
+
+        // Highlight the selected playlist option
+        const options = document.querySelectorAll('.option');
+        options.forEach(opt => {
+            opt.classList.remove('focused');
+            if (opt.getAttribute('data-playlist') === playlistType) {
+                opt.classList.add('focused');
+            }
+        });
+
+        // Start playing the playlist
+        this.playNextTrack();
+    }
+
+    // Music player controls
+    pauseMusic() {
+        this.musicPlayer.pause();
+    }
+
+    resumeMusic() {
+        this.musicPlayer.play();
+    }
+
+    attachEventListeners() {
+        // Ambient sound sliders
+        document.querySelectorAll('.icon input[type="range"]').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const soundName = e.target.closest('.icon').getAttribute('onclick').match(/\((\w+)\)/)[1];
+                this.updateVolume(soundName, e.target.value);
+            });
+        });
+
+        // Sound icon toggles
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                const soundName = icon.getAttribute('onclick').match(/\((\w+)\)/)[1];
+                this.toggleSlider(soundName);
+            });
+        });
+
+        // Playlist selection
+        const playlistOptions = document.querySelectorAll('.option');
+        playlistOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                const playlistType = option.getAttribute('data-playlist');
+                this.selectPlaylist(playlistType);
+            });
+        });
+    }
+
+    // Favorite sound mix functionality
+    saveFavorite() {
+        const sliders = document.querySelectorAll('.sound-icons input[type="range"]');
+        const favoritePlaylists = document.getElementById('favoritePlaylists');
+        const settings = Array.from(sliders).map(slider => slider.value);
+        const favoriteItem = document.createElement('div');
+        favoriteItem.classList.add('favorite-item');
+
+        const favoriteText = document.createElement('span');
+        favoriteText.textContent = `Favorite ${this.getFavoriteCount()}`;
+        favoriteItem.appendChild(favoriteText);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete-button');
+        deleteButton.onclick = () => favoriteItem.remove();
+        favoriteItem.appendChild(deleteButton);
+
+        favoriteItem.onclick = (event) => {
+            if (event.target !== deleteButton) {
+                sliders.forEach((slider, index) => {
+                    slider.value = settings[index];
+                    // Trigger volume update for each sound
+                    const soundName = slider.closest('.icon').getAttribute('onclick').match(/\((\w+)\)/)[1];
+                    this.updateVolume(soundName, settings[index]);
+                });
+            }
+        };
+
+        favoritePlaylists.appendChild(favoriteItem);
+    }
+
+    getFavoriteCount() {
+        const favoritePlaylists = document.getElementById('favoritePlaylists');
+        return favoritePlaylists.children.length + 1;
+    }
 }
 
-.playlist-options.show {
-    display: flex;
-}
+// Initialize the sound mixer when the page loads
+window.soundMixer = new SoundMixer();
 
-.option {
-    transition: all 0.3s ease;
-}
-
-.option.focused {
-    background-color: #007bff;
-    color:red
-    color: white;
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-</style>
-`;
-document.head.insertAdjacentHTML('beforeend', additionalStyles);
-
+// Expose methods to global scope for inline event handlers
+window.toggleSlider = (soundName) => window.soundMixer.toggleSlider(soundName);
+window.saveFavorite = () => window.soundMixer.saveFavorite();

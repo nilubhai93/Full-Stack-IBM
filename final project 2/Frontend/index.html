@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,15 @@
     <title>Relaxing Sound Mixer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
+
 <body>
     <header class="navbar">
         <div class="logo">My Relax</div>
         <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
         <nav class="nav-links">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#features">Features</a>
+            <a href="./nav/howitWork.html">How It Works</a>
+            <a href="./nav/features.html">Features</a>
             <a href="#pricing">Pricing</a>
             <a href="./loginAndSignup/login.html">Log In</a>
             <a href="./loginAndSignup/Signup.html" class="signup-btn">Sign Up</a>
@@ -51,15 +52,22 @@
             <div class="mixer-section">
                 <button class="mixer-button">Try to mix and match the sounds</button>
                 <div class="sound-icons">
-                    <div class="icon" tabindex="0"><p>Rain</p>🌧️<input type="range" min="0" max="100" value="50"></div>
-                    <div class="icon" tabindex="0"> <p>Thunder</p>  ⛈️<input type="range" min="0" max="100" value="50"></div>
-                    <div class="icon" tabindex="0"> <p>Wind</p>  💨<input type="range" min="0" max="100" value="50"></div>
-                    <div class="icon" tabindex="0"> <p>Nature</p>  🌲<input type="range" min="0" max="100" value="50"></div>
-                    <div class="icon" tabindex="0"> <p>Bird</p>   🐦 <input type="range" min="0" max="100" value="50"></div>
-                    <div class="icon" tabindex="0"> <p>Fire</p>  🔥<input type="range" min="0" max="100" value="50"></div>
-                
-                    <div class="icon" tabindex="0"> <p>Waves</p>  🌊<input type="range" min="0" max="100" value="50"></div>
-                    <div class="icon" tabindex="0"> <p>Train</p>  🚂<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Rain)"><p>Rain</p>🌧️<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Thunder)"><p>Thunder</p> ⛈️<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Wind)"><p>Wind</p> 💨<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Nature)"><p>Nature</p> 🌲<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Bird)"><p>Bird</p> 🐦 <input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Fire)"><p>Fire</p> 🔥<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Waves)"><p>Waves</p> 🌊<input type="range" min="0" max="100" value="50"></div>
+                    <div class="icon" tabindex="0" onclick="toggleSlider(Train)"><p>Train</p> 🚂<input type="range" min="0" max="100" value="50"></div>
+                </div>
+                <!-- New Favorite Section -->
+                <div class="favorites-section">
+                    <button class="save-favorite-button" onclick="saveFavorite()">Save Favorite</button>
+                    <h3>Your Favorites</h3>
+                    <div class="favorite-playlists" id="favoritePlaylists">
+                        <!-- Favorite playlists will be dynamically added here -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,9 +106,12 @@
             <div class="footer-column">
                 <h4>GET THE APPS</h4>
                 <div class="app-buttons">
-                    <img src="https://w7.pngwing.com/pngs/314/368/png-transparent-itunes-app-store-apple-logo-apple-text-rectangle-logo.png" alt="App Store">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/800px-Google_Play_Store_badge_EN.svg.png" alt="Google Play">
-                    <img src="https://developer.chrome.com/static/docs/webstore/branding/image/YT2Grfi9vEBa2wAPzhWa.png" alt="Chrome Web Store">
+                    <img src="https://w7.pngwing.com/pngs/314/368/png-transparent-itunes-app-store-apple-logo-apple-text-rectangle-logo.png"
+                        alt="App Store">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/800px-Google_Play_Store_badge_EN.svg.png"
+                        alt="Google Play">
+                    <img src="https://developer.chrome.com/static/docs/webstore/branding/image/YT2Grfi9vEBa2wAPzhWa.png"
+                        alt="Chrome Web Store">
                 </div>
             </div>
         </div>
@@ -124,4 +135,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

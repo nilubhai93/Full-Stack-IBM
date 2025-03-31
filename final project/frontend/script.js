@@ -1,415 +1,275 @@
-// Sound library data with real URLs
-const soundsData = [
-    { 
-        id: 'rain', 
-        name: 'Rain', 
-        icon: '🌧️',  
-    },
-    { 
-        id: 'thunder', 
-        name: 'Thunder', 
-        icon: '⚡', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/thunder.mp3' 
-    },
-    { 
-        id: 'forest', 
-        name: 'Forest', 
-        icon: '🌲', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/forest.mp3' 
-    },
-    { 
-        id: 'waves', 
-        name: 'Ocean Waves', 
-        icon: '🌊', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/waves.mp3' 
-    },
-    { 
-        id: 'fire', 
-        name: 'Fireplace', 
-        icon: '🔥', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/fire.mp3' 
-    },
-    { 
-        id: 'birds', 
-        name: 'Birds', 
-        icon: '🐦', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/birds.mp3'
-    },
-    { 
-        id: 'wind', 
-        name: 'Wind', 
-        icon: '💨', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/wind.mp3' 
-    },
-    { 
-        id: 'creek', 
-        name: 'Creek', 
-        icon: '💦', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/creek.mp3' 
-    },
-    { 
-        id: 'cafe', 
-        name: 'Cafe', 
-        icon: '☕', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/cafe.mp3' 
-    },
-    { 
-        id: 'whitenoise', 
-        name: 'White Noise', 
-        icon: '📻', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/whitenoise.mp3' 
-    },
-    { 
-        id: 'night', 
-        name: 'Night', 
-        icon: '🌙', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/night.mp3' 
-    },
-    { 
-        id: 'underwater', 
-        name: 'Underwater', 
-        icon: '🐠', 
-        audioSrc: 'https://relaxing-sounds.s3.amazonaws.com/underwater.mp3' 
-    }
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-// Audio context and nodes storage
-let audioContext;
-const audioElements = {};
-const gainNodes = {};
-let activeAudios = {};
-let isInitialized = false;
-
-// DOM elements
-const soundLibrary = document.getElementById('sound-library');
-const playAllBtn = document.getElementById('play-all');
-const pauseAllBtn = document.getElementById('pause-all');
-const saveComboBtn = document.getElementById('save-combo');
-const resetAllBtn = document.getElementById('reset-all');
-const saveModal = document.getElementById('save-modal');
-const closeModal = document.getElementById('close-modal');
-const confirmSaveBtn = document.getElementById('confirm-save');
-const combinationNameInput = document.getElementById('combination-name');
-const combinationList = document.getElementById('combination-list');
-
-// Initialize the app
-function initApp() {
-    // Create sound cards
-    createSoundCards();
-    
-    // Load saved combinations from localStorage
-    loadSavedCombinations();
-    
-    // Event listeners
-    playAllBtn.addEventListener('click', playAll);
-    pauseAllBtn.addEventListener('click', pauseAll);
-    saveComboBtn.addEventListener('click', openSaveModal);
-    resetAllBtn.addEventListener('click', resetAll);
-    closeModal.addEventListener('click', closeModalFunc);
-    confirmSaveBtn.addEventListener('click', saveCombination);
-    
-    // Close modal when clicking outside of it
-    window.addEventListener('click', (e) => {
-        if (e.target === saveModal) {
-            closeModalFunc();
-        }
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
     });
-}
+});
 
-// Create sound cards
-function createSoundCards() {
-    soundsData.forEach(sound => {
-        const cardElement = document.createElement('div');
-        cardElement.className = 'sound-card';
-        cardElement.setAttribute('data-sound-id', sound.id);
+const playlists = {
+    sleep: [
+        { url: 'https://www.bensound.com/bensound-music/bensound-relaxing.mp3', name: 'Relaxing Melody' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3', name: 'Slow Motion' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-tenderness.mp3', name: 'Tenderness' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-softsoothing.mp3', name: 'Soft Soothing' }
+    ],
+    productivity: [
+        { url: 'https://www.bensound.com/bensound-music/bensound-energy.mp3', name: 'Energy Track' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-motivation.mp3', name: 'Motivation Boost' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-happyrock.mp3', name: 'Happy Rock' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-actionable.mp3', name: 'Actionable' }
+    ],
+    random: [
+        { url: 'https://www.bensound.com/bensound-music/bensound-cute.mp3', name: 'Cute Theme' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-summer.mp3', name: 'Summer Vibes' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-funday.mp3', name: 'Fun Day' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-buddy.mp3', name: 'Buddy' }
+    ],
+    relax: [
+        { url: 'https://www.bensound.com/bensound-music/bensound-india.mp3', name: 'Indian Calm' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-littlelight.mp3', name: 'Little Light' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-memories.mp3', name: 'Memories' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-newdawn.mp3', name: 'New Dawn' }
+    ],
+    'noise-blocker': [
+        { url: 'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3', name: 'Piano Moment' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-dreams.mp3', name: 'Dreams Soundtrack' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-photoalbum.mp3', name: 'Photo Album' },
+        { url: 'https://www.bensound.com/bensound-music/bensound-love.mp3', name: 'Love Melody' }
+    ]
+};
+
+// Sound effect file paths
+const soundFiles = {
+    Rain: 'https://assets.mixkit.co/sfx/preview/mixkit-rain-and-thunder-storm-2390.mp3',
+    Thunder: 'https://assets.mixkit.co/sfx/preview/mixkit-thunder-strike-1323.mp3',
+    Wind: 'https://assets.mixkit.co/sfx/preview/mixkit-wind-woods-ambience-2541.mp3',
+    Nature: 'https://assets.mixkit.co/sfx/preview/mixkit-forest-ambience-2600.mp3',
+    Bird: 'https://assets.mixkit.co/sfx/preview/mixkit-bird-chirp-2469.mp3',
+    Fire: 'https://assets.mixkit.co/sfx/preview/mixkit-fire-burning-2038.mp3',
+    Waves: 'https://assets.mixkit.co/sfx/preview/mixkit-calm-sea-waves-1340.mp3',
+    Train: 'https://assets.mixkit.co/sfx/preview/mixkit-train-approaching-1714.mp3'
+};
+
+class SoundMixer {
+    constructor() {
+        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        this.musicPlayer = document.getElementById('audioPlayer');
+        this.currentTrackDisplay = document.querySelector('.current-track');
         
-        cardElement.innerHTML = `
-            <div class="sound-icon">${sound.icon}</div>
-            <div class="sound-name">${sound.name}</div>
-            <div class="volume-control">
-                <input type="range" min="0" max="100" value="70" class="volume-slider" data-sound-id="${sound.id}">
-            </div>
-        `;
+        // Sounds for ambient effects
+        this.sounds = {};
+        this.soundSources = {};
+        this.soundGains = {};
         
-        // Create audio element
-        const audio = new Audio();
-        audio.src = sound.audioSrc;
-        audio.loop = true;
-        audio.preload = 'auto';
-        audioElements[sound.id] = audio;
-        
-        // Add click event to toggle play/pause
-        cardElement.addEventListener('click', (e) => {
-            // Don't trigger if clicking on the volume slider
-            if (e.target.classList.contains('volume-slider')) {
-                return;
+        // Music playlist management
+        this.currentPlaylist = null;
+        this.currentPlaylistType = null;
+        this.currentMusicIndex = -1;
+
+        this.initializeSounds();
+        this.attachEventListeners();
+        this.setupMusicPlayerListeners();
+    }
+
+    async initializeSounds() {
+        // Load ambient sound effects
+        for (const [soundName, soundPath] of Object.entries(soundFiles)) {
+            try {
+                const response = await fetch(soundPath);
+                const arrayBuffer = await response.arrayBuffer();
+                const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
+                
+                this.sounds[soundName] = audioBuffer;
+                // Prepare gain node for future use
+                this.soundGains[soundName] = this.audioContext.createGain();
+                this.soundGains[soundName].gain.setValueAtTime(0.5, this.audioContext.currentTime);
+            } catch (error) {
+                console.error(`Error loading ${soundName} sound:`, error);
             }
-            
-            toggleSound(sound.id, cardElement);
-        });
-        
-        soundLibrary.appendChild(cardElement);
-        
-        // Set up volume control
-        const volumeSlider = cardElement.querySelector('.volume-slider');
-        volumeSlider.addEventListener('input', (e) => {
-            const volume = e.target.value / 100;
-            setVolume(sound.id, volume);
-        });
-    });
-}
-
-// Initialize Web Audio API
-function initializeAudio() {
-    if (isInitialized) return;
-    
-    // Create audio context
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    
-    // Set up audio nodes for each sound
-    Object.keys(audioElements).forEach(id => {
-        const source = audioContext.createMediaElementSource(audioElements[id]);
-        const gainNode = audioContext.createGain();
-        
-        // Connect nodes
-        source.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        // Store gain node for volume control
-        gainNodes[id] = gainNode;
-        
-        // Set initial volume
-        gainNode.gain.value = 0.7;
-    });
-    
-    isInitialized = true;
-}
-
-// Toggle sound play/pause
-function toggleSound(id, cardElement) {
-    try {
-        // Initialize audio context if not already done
-        if (!isInitialized) {
-            initializeAudio();
         }
+    }
+
+    setupMusicPlayerListeners() {
+        // Handle music playback ended
+        this.musicPlayer.addEventListener('ended', () => {
+            this.playNextTrack();
+        });
+    }
+
+    playNextTrack() {
+        if (!this.currentPlaylist) return;
+
+        // Increment index, loop back to start if at end
+        this.currentMusicIndex = (this.currentMusicIndex + 1) % this.currentPlaylist.length;
+        const nextTrack = this.currentPlaylist[this.currentMusicIndex];
+
+        this.musicPlayer.src = nextTrack.url;
+        this.musicPlayer.play();
+        this.updateCurrentTrackDisplay(nextTrack);
+    }
+
+    updateCurrentTrackDisplay(track) {
+        if (this.currentTrackDisplay) {
+            this.currentTrackDisplay.textContent = `Now Playing: ${track.name}`;
+        }
+    }
+
+    playSound(soundName) {
+        // Stop any existing source for this sound
+        if (this.soundSources[soundName]) {
+            this.soundSources[soundName].stop();
+            this.soundSources[soundName].disconnect();
+        }
+
+        // Create a new source for each play
+        const source = this.audioContext.createBufferSource();
+        source.buffer = this.sounds[soundName];
+        source.loop = true;
+
+        // Connect to gain node and audio destination
+        source.connect(this.soundGains[soundName]);
+        this.soundGains[soundName].connect(this.audioContext.destination);
+
+        // Start the source
+        source.start();
+
+        // Store the source for potential future stopping
+        this.soundSources[soundName] = source;
+    }
+
+    stopSound(soundName) {
+        if (this.soundSources[soundName]) {
+            this.soundSources[soundName].stop();
+            this.soundSources[soundName].disconnect();
+            delete this.soundSources[soundName];
+        }
+    }
+
+    toggleSlider(soundName) {
+        const icon = document.querySelector(`.icon[onclick="toggleSlider(${soundName})"]`);
+        icon.classList.toggle('show-slider');
+    }
+
+    updateVolume(soundName, volume) {
+        const volumeDecimal = volume / 100;
         
-        const audio = audioElements[id];
-        
-        if (audio.paused) {
-            audio.play().then(() => {
-                cardElement.classList.add('active');
-                activeAudios[id] = true;
-            }).catch(err => {
-                console.error('Error playing audio:', err);
-            });
+        if (this.soundGains[soundName]) {
+            this.soundGains[soundName].gain.setValueAtTime(volumeDecimal, this.audioContext.currentTime);
+        }
+
+        // Play or stop based on volume
+        if (volumeDecimal > 0) {
+            // Check if sound is not already playing
+            if (!this.soundSources[soundName]) {
+                this.playSound(soundName);
+            }
         } else {
-            audio.pause();
-            cardElement.classList.remove('active');
-            delete activeAudios[id];
+            this.stopSound(soundName);
         }
-    } catch (err) {
-        console.error('Error toggling sound:', err);
     }
-}
 
-// Set volume for a sound
-function setVolume(id, volume) {
-    if (!isInitialized) {
-        // If audio not initialized yet, store the volume to apply later
-        audioElements[id].volume = volume;
-        return;
+    // Enhanced playlist functionality
+    selectPlaylist(playlistType) {
+        this.currentPlaylist = playlists[playlistType];
+        this.currentPlaylistType = playlistType;
+        this.currentMusicIndex = -1;
+
+        // Highlight the selected playlist option
+        const options = document.querySelectorAll('.option');
+        options.forEach(opt => {
+            opt.classList.remove('focused');
+            if (opt.getAttribute('data-playlist') === playlistType) {
+                opt.classList.add('focused');
+            }
+        });
+
+        // Start playing the playlist
+        this.playNextTrack();
     }
-    
-    if (gainNodes[id]) {
-        gainNodes[id].gain.value = volume;
+
+    // Music player controls
+    pauseMusic() {
+        this.musicPlayer.pause();
     }
-}
 
-// Play all active sounds
-function playAll() {
-    if (!isInitialized) {
-        initializeAudio();
+
+    resumeMusic() {
+        this.musicPlayer.play();
     }
-    
-    soundsData.forEach(sound => {
-        const cardElement = document.querySelector(`.sound-card[data-sound-id="${sound.id}"]`);
-        const audio = audioElements[sound.id];
-        
-        if (cardElement.classList.contains('active') || activeAudios[sound.id]) {
-            audio.play().catch(err => console.error('Error playing audio:', err));
-        }
-    });
-}
 
-// Pause all sounds
-function pauseAll() {
-    soundsData.forEach(sound => {
-        const audio = audioElements[sound.id];
-        audio.pause();
-    });
-}
+    attachEventListeners() {
+        // Ambient sound sliders
+        document.querySelectorAll('.icon input[type="range"]').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const soundName = e.target.closest('.icon').getAttribute('onclick').match(/\((\w+)\)/)[1];
+                this.updateVolume(soundName, e.target.value);
+            });
+        });
 
-// Reset all sounds
-function resetAll() {
-    soundsData.forEach(sound => {
-        const cardElement = document.querySelector(`.sound-card[data-sound-id="${sound.id}"]`);
-        const audio = audioElements[sound.id];
-        const volumeSlider = document.querySelector(`.volume-slider[data-sound-id="${sound.id}"]`);
-        
-        // Reset audio
-        audio.pause();
-        audio.currentTime = 0;
-        
-        // Reset UI
-        cardElement.classList.remove('active');
-        volumeSlider.value = 70;
-        
-        // Reset volume
-        setVolume(sound.id, 0.7);
-        
-        // Clean up active audios
-        delete activeAudios[sound.id];
-    });
-}
+        // Sound icon toggles
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                const soundName = icon.getAttribute('onclick').match(/\((\w+)\)/)[1];
+                this.toggleSlider(soundName);
+            });
+        });
 
-// Open save modal
-function openSaveModal() {
-    saveModal.style.display = 'flex';
-    combinationNameInput.focus();
-}
-
-// Close modal
-function closeModalFunc() {
-    saveModal.style.display = 'none';
-    combinationNameInput.value = '';
-}
-
-// Save current combination
-function saveCombination() {
-    const name = combinationNameInput.value.trim();
-    
-    if (!name) {
-        alert('Please enter a name for your combination.');
-        return;
+        // Playlist selection
+        const playlistOptions = document.querySelectorAll('.option');
+        playlistOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                const playlistType = option.getAttribute('data-playlist');
+                this.selectPlaylist(playlistType);
+            });
+        });
     }
-    
-    // Get current state of all sounds
-    const combination = {};
-    
-    soundsData.forEach(sound => {
-        const volumeSlider = document.querySelector(`.volume-slider[data-sound-id="${sound.id}"]`);
-        const isActive = document.querySelector(`.sound-card[data-sound-id="${sound.id}"]`).classList.contains('active');
-        
-        combination[sound.id] = {
-            active: isActive || activeAudios[sound.id] || false,
-            volume: parseInt(volumeSlider.value)
+
+    // Favorite sound mix functionality
+    saveFavorite() {
+        const sliders = document.querySelectorAll('.sound-icons input[type="range"]');
+        const favoritePlaylists = document.getElementById('favoritePlaylists');
+        const settings = Array.from(sliders).map(slider => slider.value);
+        const favoriteItem = document.createElement('div');
+        favoriteItem.classList.add('favorite-item');
+
+        const favoriteText = document.createElement('span');
+        favoriteText.textContent = `Favorite ${this.getFavoriteCount()}`;
+        favoriteItem.appendChild(favoriteText);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('delete-button');
+        deleteButton.onclick = () => favoriteItem.remove();
+        favoriteItem.appendChild(deleteButton);
+
+        favoriteItem.onclick = (event) => {
+            if (event.target !== deleteButton) {
+                sliders.forEach((slider, index) => {
+                    slider.value = settings[index];
+                    // Trigger volume update for each sound
+                    const soundName = slider.closest('.icon').getAttribute('onclick').match(/\((\w+)\)/)[1];
+                    this.updateVolume(soundName, settings[index]);
+                });
+            }
         };
-    });
-    
-    // Save to localStorage
-    let savedCombinations = JSON.parse(localStorage.getItem('soundCombinations')) || {};
-    savedCombinations[name] = combination;
-    localStorage.setItem('soundCombinations', JSON.stringify(savedCombinations));
-    
-    // Update UI
-    closeModalFunc();
-    loadSavedCombinations();
-}
 
-// Load saved combinations from localStorage
-function loadSavedCombinations() {
-    const savedCombinations = JSON.parse(localStorage.getItem('soundCombinations')) || {};
-    combinationList.innerHTML = '';
-    
-    Object.keys(savedCombinations).forEach(name => {
-        const combinationItem = document.createElement('div');
-        combinationItem.className = 'combination-item';
-        combinationItem.innerText = name;
-        
-        // Add click event to load combination
-        combinationItem.addEventListener('click', () => {
-            loadCombination(name, savedCombinations[name]);
-        });
-        
-        // Add delete button
-        const deleteBtn = document.createElement('span');
-        deleteBtn.innerHTML = '&times;';
-        deleteBtn.style.float = 'right';
-        deleteBtn.style.cursor = 'pointer';
-        deleteBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            deleteCombination(name);
-        });
-        
-        combinationItem.appendChild(deleteBtn);
-        combinationList.appendChild(combinationItem);
-    });
-}
-
-// Load a saved combination
-function loadCombination(name, combination) {
-    // Reset all sounds first
-    resetAll();
-    
-    // Initialize audio if needed
-    if (!isInitialized) {
-        initializeAudio();
+        favoritePlaylists.appendChild(favoriteItem);
     }
-    
-    // Apply the saved combination
-    Object.keys(combination).forEach(soundId => {
-        const soundData = combination[soundId];
-        const cardElement = document.querySelector(`.sound-card[data-sound-id="${soundId}"]`);
-        const volumeSlider = document.querySelector(`.volume-slider[data-sound-id="${soundId}"]`);
-        
-        // Set volume
-        volumeSlider.value = soundData.volume;
-        setVolume(soundId, soundData.volume / 100);
-        
-        // Play if active
-        if (soundData.active) {
-            const audio = audioElements[soundId];
-            audio.play().then(() => {
-                cardElement.classList.add('active');
-                activeAudios[soundId] = true;
-            }).catch(err => console.error('Error playing audio:', err));
-        }
-    });
-}
 
-// Delete a saved combination
-function deleteCombination(name) {
-    if (confirm(`Are you sure you want to delete "${name}"?`)) {
-        let savedCombinations = JSON.parse(localStorage.getItem('soundCombinations')) || {};
-        delete savedCombinations[name];
-        localStorage.setItem('soundCombinations', JSON.stringify(savedCombinations));
-        loadSavedCombinations();
+    getFavoriteCount() {
+        const favoritePlaylists = document.getElementById('favoritePlaylists');
+        return favoritePlaylists.children.length + 1;
     }
 }
 
-// Add admin functionality to add new sound categories
-function addNewSoundCategory(id, name, icon, audioSrc) {
-    // Only allow if user is admin
-    if (!isAdmin()) return;
-    
-    // Add to soundsData
-    soundsData.push({ id, name, icon, audioSrc });
-    
-    // Clear and recreate sound cards
-    soundLibrary.innerHTML = '';
-    createSoundCards();
-    
-    // Reinitialize audio
-    isInitialized = false;
-    initializeAudio();
-}
+// Initialize the sound mixer when the page loads
+window.soundMixer = new SoundMixer();
 
-// Check if user is admin
-function isAdmin() {
-    // This would need to be implemented based on your authentication system
-    // For now, return false
-    return false;
-}
+// Expose methods to global scope for inline event handlers
+window.toggleSlider = (soundName) => window.soundMixer.toggleSlider(soundName);
+window.saveFavorite = () => window.soundMixer.saveFavorite();
 
-// Initialize app when DOM is loaded
-document.addEventListener('DOMContentLoaded', initApp);
+
